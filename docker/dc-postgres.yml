@@ -1,0 +1,26 @@
+#
+# DC для DEMO среды - с PostgreSQL
+#
+
+name: ti-demo-env
+
+services:
+    postgres.demo.ti:
+        platform:
+            linux/x86_64
+        image: "postgres:17.6"
+        ports:
+            - "20432:5432"
+        environment:
+            - POSTGRES_USER=user
+            - POSTGRES_PASSWORD=password
+            - TZ=Europe/Moscow
+        volumes:
+            - ./configs/postgres:/docker-entrypoint-initdb.d/
+            - ./../mnt/postgres/data:/var/lib/postgresql/data:rw
+        hostname: "postgres.demo.ti"
+        container_name: "postgres.demo.tis"
+        # network_mode: host
+        tty: true
+        command: -c logging_collector=true
+
