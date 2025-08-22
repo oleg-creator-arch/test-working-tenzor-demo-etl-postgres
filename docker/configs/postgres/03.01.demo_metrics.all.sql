@@ -61,4 +61,4 @@ insert into demo_schema.demo_metrics (
 grant all on all tables in schema demo_schema to demo_role;
 alter table demo_schema.demo_data owner to demo_user;
 
-/q
+\q
