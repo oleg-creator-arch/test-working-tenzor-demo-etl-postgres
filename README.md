@@ -58,7 +58,7 @@ npm install
 
 ```bash
 cd ./docker
-docker-compose --file ./dc-postgres.yml up
+docker-compose --file ./dc-postgres.yml up -d
 cd ./..
 ```
 
